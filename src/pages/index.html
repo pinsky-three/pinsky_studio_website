@@ -79,49 +79,150 @@
 
     <!-- CSS Preline -->
     <link rel="stylesheet" href="https://preline.co/assets/css/main.min.css" />
+
+    <style>
+      /* Theme Switcher Styles */
+      .theme-switcher {
+        display: none;
+      }
+
+      /* Theme-specific styles */
+      :root[data-theme="light"] {
+        color-scheme: light;
+      }
+
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+      }
+
+      @keyframes theme-fade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      /* Theme transition effects */
+      .dark svg, .light svg {
+        animation: theme-fade 0.3s ease;
+      }
+
+      /* Header styles for both themes */
+      .header-main {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+
+      /* Dark theme header styles */
+      .dark .header-main {
+        background: rgba(23, 23, 23, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Light theme header styles */
+      .light .header-main {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Logo styles */
+      .logo-text {
+        color: rgb(17, 24, 39);
+        transition: color 0.3s ease;
+      }
+
+      .dark .logo-text {
+        color: rgb(255, 255, 255);
+      }
+
+      /* Navigation links */
+      .nav-link {
+        color: rgba(17, 24, 39, 0.8);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: rgba(17, 24, 39, 1);
+      }
+
+      .dark .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .dark .nav-link:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+
+      /* Contact button */
+      .contact-button {
+        background: linear-gradient(135deg, #6366f1, #3b82f6);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .contact-button:hover {
+        background: linear-gradient(135deg, #4f46e5, #2563eb);
+        transform: translateY(-1px);
+      }
+
+      /* Logo background in dark mode */
+      .dark .logo-bg {
+        background-color: rgb(23, 23, 23);
+      }
+
+      /* Mobile menu */
+      .mobile-menu {
+        background: rgba(255, 255, 255, 0.95);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .dark .mobile-menu {
+        background: rgba(23, 23, 23, 0.95);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
   </head>
 
   <body class="dark:bg-neutral-900">
     <!-- ========== HEADER ========== -->
-    <header class="fixed w-full top-0 z-50 bg-neutral-900/80 backdrop-blur-lg border-b border-white/10">
+    <header class="header-main">
       <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
-          <a href="/" class="flex items-center gap-x-3 text-xl font-semibold text-white hover:text-white/80 transition">
+          <a href="/" class="flex items-center gap-x-3 text-xl font-semibold logo-text">
             <div class="relative size-8">
-              <div class="absolute inset-0 rounded-lg bg-gradient-to-tr from-purple-600 to-blue-400 animate-gradient"></div>
-              <div class="absolute inset-0.5 rounded-lg bg-neutral-900 flex items-center justify-center">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">P</span>
+              <div class="absolute inset-0 rounded-lg bg-gradient-to-tr from-indigo-600 to-blue-500"></div>
+              <div class="absolute inset-0.5 rounded-lg logo-bg flex items-center justify-center">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">P</span>
               </div>
             </div>
-            <span class="hidden sm:inline-block">Pinsky Studio</span>
+            <span>Pinsky Studio</span>
           </a>
           <!-- End Logo -->
 
           <!-- Navigation -->
           <nav class="hidden md:flex items-center gap-x-8">
-            <a href="#hero" 
-               class="relative py-1.5 text-sm text-white hover:text-white/80 transition group">
+            <a href="#hero" class="nav-link relative py-1.5 text-sm group">
               Home
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#gallery" 
-               class="relative py-1.5 text-sm text-white/70 hover:text-white transition group">
+            <a href="#gallery" class="nav-link relative py-1.5 text-sm group">
               Gallery
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#about" 
-               class="relative py-1.5 text-sm text-white/70 hover:text-white transition group">
+            <a href="#about" class="nav-link relative py-1.5 text-sm group">
               About
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#exhibitions" 
-               class="relative py-1.5 text-sm text-white/70 hover:text-white transition group">
+            <a href="#exhibitions" class="nav-link relative py-1.5 text-sm group">
               Exhibitions
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <a href="#contact" 
-               class="relative inline-flex items-center justify-center px-4 py-1.5 text-sm text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:from-purple-500 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-purple-500/25">
+            <a href="#contact" class="contact-button px-4 py-1.5 text-sm rounded-full">
               Contact
             </a>
           </nav>
@@ -129,7 +230,7 @@
 
           <!-- Mobile Menu Button -->
           <button type="button" 
-                  class="md:hidden inline-flex items-center justify-center size-10 text-white hover:text-white/80 focus:outline-none"
+                  class="md:hidden inline-flex items-center justify-center size-10 nav-link"
                   data-hs-collapse="#navbar-collapse">
             <span class="sr-only">Toggle menu</span>
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -141,29 +242,13 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div id="navbar-collapse" 
-           class="hidden md:hidden absolute top-full left-0 right-0 bg-neutral-900/95 backdrop-blur-lg border-t border-white/10">
+      <div id="navbar-collapse" class="hidden md:hidden mobile-menu absolute top-full left-0 right-0 backdrop-blur-lg">
         <nav class="flex flex-col p-6 gap-y-4">
-          <a href="#hero" 
-             class="text-sm text-white hover:text-white/80 transition">
-            Home
-          </a>
-          <a href="#gallery" 
-             class="text-sm text-white/70 hover:text-white transition">
-            Gallery
-          </a>
-          <a href="#about" 
-             class="text-sm text-white/70 hover:text-white transition">
-            About
-          </a>
-          <a href="#exhibitions" 
-             class="text-sm text-white/70 hover:text-white transition">
-            Exhibitions
-          </a>
-          <a href="#contact" 
-             class="inline-flex items-center justify-center px-4 py-1.5 text-sm text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:from-purple-500 hover:to-blue-400 transition-all duration-300">
-            Contact
-          </a>
+          <a href="#hero" class="nav-link text-sm">Home</a>
+          <a href="#gallery" class="nav-link text-sm">Gallery</a>
+          <a href="#about" class="nav-link text-sm">About</a>
+          <a href="#exhibitions" class="nav-link text-sm">Exhibitions</a>
+          <a href="#contact" class="contact-button inline-flex items-center justify-center px-4 py-1.5 text-sm rounded-full">Contact</a>
         </nav>
       </div>
     </header>
@@ -568,40 +653,33 @@
             </p>
           </div>
 
-          <!-- Social Links -->
-          <ul class="flex flex-wrap items-center">
-            <li
-              class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600"
-            >
-              <a
-                class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-                href="https://twitter.com/pinskystudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Twitter</a
-              >
-            </li>
-            <li
-              class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600"
-            >
-              <a
-                class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-                href="https://instagram.com/pinskystudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Instagram</a
-              >
-            </li>
-            <li class="inline-block">
-              <a
-                class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-                href="https://linkedin.com/in/pinskystudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LinkedIn</a
-              >
-            </li>
-          </ul>
+          <div class="flex items-center gap-4">
+            <!-- Theme Switcher -->
+            <button type="button" 
+                    id="themeSwitcher"
+                    class="inline-flex items-center justify-center h-6 text-xs text-gray-500 hover:text-gray-700 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+                    aria-label="Toggle theme">
+                <svg class="h-3.5 w-3.5 dark:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+                <svg class="h-3.5 w-3.5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+
+            <!-- Social Links -->
+            <ul class="flex flex-wrap items-center">
+              <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+                <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400" href="https://twitter.com/pinskystudio" target="_blank" rel="noopener noreferrer">Twitter</a>
+              </li>
+              <li class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+                <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400" href="https://instagram.com/pinskystudio" target="_blank" rel="noopener noreferrer">Instagram</a>
+              </li>
+              <li class="inline-block">
+                <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400" href="https://linkedin.com/in/pinskystudio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
@@ -609,5 +687,67 @@
 
     <!-- JS PLUGINS -->
     <script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"></script>
+
+    <!-- Theme Initialization -->
+    <script>
+        class ThemeSwitcher {
+            constructor() {
+                this.root = document.documentElement;
+                this.switcher = document.getElementById('themeSwitcher');
+                this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                
+                // Initialize theme
+                this.init();
+                this.addEventListeners();
+            }
+
+            init() {
+                // Check for stored preference
+                const storedTheme = localStorage.getItem('theme');
+                
+                if (storedTheme) {
+                    // Use stored preference if it exists
+                    this.applyTheme(storedTheme);
+                } else {
+                    // Use system preference for first visit
+                    const systemTheme = this.mediaQuery.matches ? 'dark' : 'light';
+                    this.applyTheme(systemTheme);
+                }
+            }
+
+            addEventListeners() {
+                // Theme toggle click
+                this.switcher.addEventListener('click', () => this.toggleTheme());
+
+                // System theme change - only apply if no stored preference
+                this.mediaQuery.addEventListener('change', (e) => {
+                    if (!localStorage.getItem('theme')) {
+                        this.applyTheme(e.matches ? 'dark' : 'light');
+                    }
+                });
+            }
+
+            toggleTheme() {
+                const currentTheme = this.root.classList.contains('dark') ? 'dark' : 'light';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                this.applyTheme(newTheme);
+            }
+
+            applyTheme(theme) {
+                // Remove both classes first
+                this.root.classList.remove('light', 'dark');
+                // Add the new theme class
+                this.root.classList.add(theme);
+                // Store the preference
+                localStorage.setItem('theme', theme);
+            }
+        }
+
+        // Initialize theme switcher when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeSwitcher();
+        });
+    </script>
   </body>
 </html>
