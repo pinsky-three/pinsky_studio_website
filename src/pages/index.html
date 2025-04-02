@@ -184,76 +184,7 @@
         background: rgba(23, 23, 23, 0.95);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
-    </style>
-  </head>
 
-  <body class="dark:bg-neutral-900">
-    <!-- ========== HEADER ========== -->
-    <header class="header-main">
-      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <a href="/" class="flex items-center gap-x-3 text-xl font-semibold logo-text">
-            <div class="relative size-8">
-              <div class="absolute inset-0 rounded-lg bg-gradient-to-tr from-indigo-600 to-blue-500"></div>
-              <div class="absolute inset-0.5 rounded-lg logo-bg flex items-center justify-center">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">P</span>
-              </div>
-            </div>
-            <span>Pinsky Studio</span>
-          </a>
-          <!-- End Logo -->
-
-          <!-- Navigation -->
-          <nav class="hidden md:flex items-center gap-x-8">
-            <a href="#hero" class="nav-link relative py-1.5 text-sm group">
-              Home
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-            </a>
-            <a href="#gallery" class="nav-link relative py-1.5 text-sm group">
-              Gallery
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-            </a>
-            <a href="#about" class="nav-link relative py-1.5 text-sm group">
-              About
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-            </a>
-            <a href="#exhibitions" class="nav-link relative py-1.5 text-sm group">
-              Exhibitions
-              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-            </a>
-            <a href="#contact" class="contact-button px-4 py-1.5 text-sm rounded-full">
-              Contact
-            </a>
-          </nav>
-          <!-- End Navigation -->
-
-          <!-- Mobile Menu Button -->
-          <button type="button" 
-                  class="md:hidden inline-flex items-center justify-center size-10 nav-link"
-                  data-hs-collapse="#navbar-collapse">
-            <span class="sr-only">Toggle menu</span>
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path class="hs-collapse-open:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-              <path class="hidden hs-collapse-open:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="navbar-collapse" class="hidden md:hidden mobile-menu absolute top-full left-0 right-0 backdrop-blur-lg">
-        <nav class="flex flex-col p-6 gap-y-4">
-          <a href="#hero" class="nav-link text-sm">Home</a>
-          <a href="#gallery" class="nav-link text-sm">Gallery</a>
-          <a href="#about" class="nav-link text-sm">About</a>
-          <a href="#exhibitions" class="nav-link text-sm">Exhibitions</a>
-          <a href="#contact" class="contact-button inline-flex items-center justify-center px-4 py-1.5 text-sm rounded-full">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <style>
       @keyframes gradient {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
@@ -263,30 +194,109 @@
         background-size: 200% auto;
         animation: gradient 8s ease infinite;
       }
+
+      .hero-pattern {
+        background-image: radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.15) 1px, transparent 0);
+        background-size: 24px 24px;
+      }
+
+      .hero-glass {
+        backdrop-filter: blur(8px);
+        background: rgba(17, 24, 39, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .dark .hero-glass {
+        background: rgba(17, 24, 39, 0.7);
+      }
+
+      .light .hero-glass {
+        background: rgba(255, 255, 255, 0.8);
+      }
     </style>
+  </head>
+
+  <body class="dark:bg-neutral-900">
+    <!-- ========== HEADER ========== -->
+    <header class="header-main">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-x-2 text-sm font-medium">
+            <img src="/pinsky_logo_black.svg" alt="Pinsky Studio Logo" class="h-5 w-auto dark:hidden">
+            <img src="/pinsky_logo_white.svg" alt="Pinsky Studio Logo" class="h-5 w-auto hidden dark:block">
+            <span class="text-gray-800 dark:text-white">Pinsky Studio</span>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center gap-x-8">
+            <a href="#hero" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">
+              Home
+            </a>
+            <a href="#gallery" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">
+              Gallery
+            </a>
+            <a href="#about" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">
+              About
+            </a>
+            <a href="#exhibitions" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">
+              Exhibitions
+            </a>
+            <a href="#contact" class="text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300">
+              Contact
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button type="button" 
+                  class="md:hidden inline-flex items-center justify-center size-10 text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+                  data-hs-collapse="#navbar-collapse">
+            <span class="sr-only">Toggle menu</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path class="hs-collapse-open:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+              <path class="hidden hs-collapse-open:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="navbar-collapse" class="hidden md:hidden absolute top-full left-0 right-0 bg-white dark:bg-neutral-900 border-t border-gray-200 dark:border-neutral-800">
+        <nav class="flex flex-col p-4 gap-y-3">
+          <a href="#hero" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">Home</a>
+          <a href="#gallery" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">Gallery</a>
+          <a href="#about" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">About</a>
+          <a href="#exhibitions" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white">Exhibitions</a>
+          <a href="#contact" class="text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300">Contact</a>
+        </nav>
+      </div>
+    </header>
 
     <!-- ========== MAIN CONTENT ========== -->
     <main id="content" class="pt-16">
       <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- HERO SECTION -->
-        <section id="hero" class="text-center py-16">
-          <h1 class="text-4xl font-bold text-gray-800 dark:text-neutral-200">
-            Painting in the Latent Space
+        <section id="hero" class="py-16">
+          <h1 class="text-2xl font-medium text-gray-800 dark:text-white mb-2">
+            Recursive Realities
           </h1>
-          <p class="mt-4 text-lg text-gray-600 dark:text-neutral-400">
-            Where Algorithms Meet Artistry
+          <p class="text-sm text-gray-600 dark:text-neutral-400 mb-8">
+            Where algorithmic precision sparks wonder
           </p>
-          <p class="mt-6 text-sm text-gray-600 dark:text-neutral-400 max-w-2xl mx-auto">
-            Welcome to Pinsky Studio – an innovative art project fusing custom
-            plotter technology, mathematical digital visuals, and hand-painted
-            techniques to reveal the hidden dimensions of data.
-          </p>
+          <div class="space-y-6">
+            <p class="text-sm text-gray-600 dark:text-neutral-400">
+              Pinsky's art explores recursive structures and complex systems in nature and mathematics, probing the boundaries of perception and time. Embracing technology not just as a tool but as a collaborator and even a metaphor, Pinsky blends generative algorithms and custom plotter hardware with traditional artistic techniques.
+            </p>
+            <p class="text-sm text-gray-600 dark:text-neutral-400">
+              This interplay of the algorithmic and the handmade yields a unique fusion of mathematical precision and organic expression, producing intricate works that spark curiosity and revelation. Informed by computational theory and Constructivist art, and drawing inspiration from visionaries such as M.C. Escher, Vera Molnár, Sol LeWitt, and Manfred Mohr, Pinsky creates art that invites viewers to reimagine how they see reality.
+            </p>
+          </div>
           <div class="mt-8">
-            <a
-              href="#gallery"
-              class="inline-block py-2 px-4 bg-gray-800 text-white rounded hover:bg-gray-900 dark:bg-white dark:text-neutral-800 dark:hover:bg-neutral-200"
-            >
+            <a href="#gallery" class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white inline-flex items-center gap-x-1">
               Explore Gallery
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
             </a>
           </div>
         </section>
