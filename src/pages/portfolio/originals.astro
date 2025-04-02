@@ -1,0 +1,93 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Original Artworks | Pinsky Studio - Physical Works">
+    <main id="content" class="pt-16">
+        <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section class="py-10">
+                <div class="flex items-center gap-x-3 mb-8">
+                    <a
+                        href="/portfolio"
+                        class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+                        >Portfolio</a
+                    >
+                    <span class="text-gray-400 dark:text-neutral-600">/</span>
+                    <h1
+                        class="text-xl font-medium text-gray-800 dark:text-neutral-200"
+                    >
+                        Original Physical Artworks
+                    </h1>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Artwork Item -->
+                    <article class="group">
+                        <a href="#" class="block">
+                            <div
+                                class="aspect-square rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
+                            >
+                                <img
+                                    src="/placeholder-artwork1.jpg"
+                                    alt="Artwork Title"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                            </div>
+                            <div class="mt-4">
+                                <h2
+                                    class="text-lg font-medium text-gray-800 dark:text-neutral-200"
+                                >
+                                    Recursive Pattern #1
+                                </h2>
+                                <p
+                                    class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
+                                >
+                                    Acrylic and plotter drawing on canvas,
+                                    100x100cm
+                                </p>
+                                <p
+                                    class="mt-2 text-sm text-gray-500 dark:text-neutral-500"
+                                >
+                                    2024
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Add more artwork items here -->
+                </div>
+
+                <!-- Filters -->
+                <div class="mt-12">
+                    <h2
+                        class="text-sm font-medium text-gray-800 dark:text-neutral-200 mb-4"
+                    >
+                        Filter by:
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                        >
+                            All
+                        </button>
+                        <button
+                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                        >
+                            Canvas
+                        </button>
+                        <button
+                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                        >
+                            Paper
+                        </button>
+                        <button
+                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                        >
+                            Mixed Media
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</Layout>

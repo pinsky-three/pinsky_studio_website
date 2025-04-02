@@ -1,22 +1,545 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<!-- Required Meta Tags Always Come First -->
+		<meta charset="utf-8" />
+		<meta
+			name="robots"
+			content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+		/>
+		<link rel="canonical" href="https://pinsky.studio/" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta
+			name="description"
+			content="Pinsky Studio presents Painting in the Latent Space – a fusion of custom plotter technology, algorithmic visuals, and hand-painted techniques. Discover how hidden dimensions of data transform into tangible art."
+		/>
+
+		<meta name="twitter:site" content="@pinskystudio" />
+		<meta name="twitter:creator" content="@pinskystudio" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Pinsky Studio | Painting in the Latent Space – Where Algorithms Meet Artistry"
+		/>
+		<meta
+			name="twitter:description"
+			content="Discover Painting in the Latent Space, an innovative art project merging technology and traditional painting to reveal hidden data dimensions."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://pinsky.studio/assets/img/og-image.png"
+		/>
+
+		<meta property="og:url" content="https://pinsky.studio/" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Pinsky Studio" />
+		<meta
+			property="og:title"
+			content="Pinsky Studio | Painting in the Latent Space – Where Algorithms Meet Artistry"
+		/>
+		<meta
+			property="og:description"
+			content="Pinsky Studio presents Painting in the Latent Space – a fusion of custom plotter technology, algorithmic visuals, and hand-painted techniques. Discover how hidden dimensions of data transform into tangible art."
+		/>
+		<meta
+			property="og:image"
+			content="https://pinsky.studio/assets/img/og-image.png"
+		/>
+
+		<!-- Title -->
+		<title>
+			Pinsky Studio | Painting in the Latent Space – Where Algorithms Meet
+			Artistry
+		</title>
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+
+		<!-- Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Theme Check and Update -->
+		<script>
+			const html = document.querySelector("html");
+			const isLightOrAuto =
+				localStorage.getItem("hs_theme") === "light" ||
+				(localStorage.getItem("hs_theme") === "auto" &&
+					!window.matchMedia("(prefers-color-scheme: dark)").matches);
+			const isDarkOrAuto =
+				localStorage.getItem("hs_theme") === "dark" ||
+				(localStorage.getItem("hs_theme") === "auto" &&
+					window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+			// if (isLightOrAuto && html.classList.contains("dark"))
+			// 	html.classList.remove("dark");
+			// else if (isDarkOrAuto && html.classList.contains("light"))
+			// 	html.classList.remove("light");
+			// else if (isDarkOrAuto && !html.classList.contains("dark"))
+			// 	html.classList.add("dark");
+			// else if (isLightOrAuto && !html.classList.contains("light"))
+			// 	html.classList.add("light");
+		</script>
+
+		<!-- CSS Preline -->
+		<link
+			rel="stylesheet"
+			href="https://preline.co/assets/css/main.min.css"
+		/>
+
+		<style>
+			/* Theme Switcher Styles */
+			.theme-switcher {
+				display: none;
+			}
+
+			/* Theme-specific styles */
+			:root[data-theme="light"] {
+				color-scheme: light;
+			}
+
+			:root[data-theme="dark"] {
+				color-scheme: dark;
+			}
+
+			@keyframes theme-fade {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+
+			/* Theme transition effects */
+			.dark svg,
+			.light svg {
+				animation: theme-fade 0.3s ease;
+			}
+
+			/* Header styles for both themes */
+			.header-main {
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 50;
+				transition: all 0.3s ease;
+			}
+
+			/* Dark theme header styles */
+			.dark .header-main {
+				background: rgba(23, 23, 23, 0.85);
+				backdrop-filter: blur(10px);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			/* Light theme header styles */
+			.light .header-main {
+				background: rgba(255, 255, 255, 0.85);
+				backdrop-filter: blur(10px);
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+			}
+
+			/* Logo styles */
+			.logo-text {
+				color: rgb(17, 24, 39);
+				transition: color 0.3s ease;
+			}
+
+			.dark .logo-text {
+				color: rgb(255, 255, 255);
+			}
+
+			/* Navigation links */
+			.nav-link {
+				color: rgba(17, 24, 39, 0.8);
+				transition: color 0.3s ease;
+			}
+
+			.nav-link:hover {
+				color: rgba(17, 24, 39, 1);
+			}
+
+			.dark .nav-link {
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.dark .nav-link:hover {
+				color: rgba(255, 255, 255, 1);
+			}
+
+			/* Contact button */
+			.contact-button {
+				background: linear-gradient(135deg, #6366f1, #3b82f6);
+				color: white;
+				transition: all 0.3s ease;
+			}
+
+			.contact-button:hover {
+				background: linear-gradient(135deg, #4f46e5, #2563eb);
+				transform: translateY(-1px);
+			}
+
+			/* Logo background in dark mode */
+			.dark .logo-bg {
+				background-color: rgb(23, 23, 23);
+			}
+
+			/* Mobile menu */
+			.mobile-menu {
+				background: rgba(255, 255, 255, 0.95);
+				border-top: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
+			.dark .mobile-menu {
+				background: rgba(23, 23, 23, 0.95);
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			@keyframes gradient {
+				0% {
+					background-position: 0% 50%;
+				}
+				50% {
+					background-position: 100% 50%;
+				}
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+			.animate-gradient {
+				background-size: 200% auto;
+				animation: gradient 8s ease infinite;
+			}
+
+			.hero-pattern {
+				background-image: radial-gradient(
+					circle at 1px 1px,
+					rgba(99, 102, 241, 0.15) 1px,
+					transparent 0
+				);
+				background-size: 24px 24px;
+			}
+
+			.hero-glass {
+				backdrop-filter: blur(8px);
+				background: rgba(17, 24, 39, 0.7);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.dark .hero-glass {
+				background: rgba(17, 24, 39, 0.7);
+			}
+
+			.light .hero-glass {
+				background: rgba(255, 255, 255, 0.8);
+			}
+		</style>
 	</head>
-	<body>
-		<slot />
+
+	<body class="dark:bg-neutral-900">
+		<!-- ========== HEADER ========== -->
+		<header class="header-main">
+			<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center justify-between h-16">
+					<!-- Logo -->
+					<a
+						href="/"
+						class="flex items-center gap-x-2 text-sm font-medium"
+					>
+						<img
+							src="/pinsky_logo_black.svg"
+							alt="Pinsky Studio Logo"
+							class="h-6 w-auto dark:hidden"
+						/>
+						<img
+							src="/pinsky_logo_white.svg"
+							alt="Pinsky Studio Logo"
+							class="h-6 w-auto hidden dark:block"
+						/>
+					</a>
+
+					<!-- Navigation -->
+					<nav class="hidden md:flex items-center gap-x-8">
+						<a
+							href="#hero"
+							class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>
+							Home
+						</a>
+						<a
+							href="#gallery"
+							class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>
+							Gallery
+						</a>
+						<a
+							href="#about"
+							class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>
+							About
+						</a>
+						<a
+							href="#exhibitions"
+							class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>
+							Exhibitions
+						</a>
+						<a
+							href="#contact"
+							class="text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+						>
+							Contact
+						</a>
+					</nav>
+
+					<!-- Mobile Menu Button -->
+					<button
+						type="button"
+						class="md:hidden inline-flex items-center justify-center size-10 text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						data-hs-collapse="#navbar-collapse"
+					>
+						<span class="sr-only">Toggle menu</span>
+						<svg
+							class="w-5 h-5"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								class="hs-collapse-open:hidden"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M4 6h16M4 12h16M4 18h16"></path>
+							<path
+								class="hidden hs-collapse-open:block"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="1.5"
+								d="M6 18L18 6M6 6l12 12"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<!-- Mobile Menu -->
+			<div
+				id="navbar-collapse"
+				class="hidden md:hidden absolute top-full left-0 right-0 bg-white dark:bg-neutral-900 border-t border-gray-200 dark:border-neutral-800"
+			>
+				<nav class="flex flex-col p-4 gap-y-3">
+					<a
+						href="#hero"
+						class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>Home</a
+					>
+					<a
+						href="#gallery"
+						class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>Gallery</a
+					>
+					<a
+						href="#about"
+						class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>About</a
+					>
+					<a
+						href="#exhibitions"
+						class="text-sm text-gray-600 hover:text-gray-800 dark:text-neutral-400 dark:hover:text-white"
+						>Exhibitions</a
+					>
+					<a
+						href="#contact"
+						class="text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+						>Contact</a
+					>
+				</nav>
+			</div>
+		</header>
+
+		<!-- ========== MAIN CONTENT ========== -->
+		<main id="content" class="pt-16">
+			<slot />
+		</main>
+		<!-- ========== END MAIN CONTENT ========== -->
+
+		<!-- ========== FOOTER ========== -->
+		<footer class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="py-6 border-t border-gray-200 dark:border-neutral-700">
+				<div class="flex flex-wrap justify-between items-center gap-2">
+					<div>
+						<p class="text-xs text-gray-600 dark:text-neutral-400">
+							© 2025 Pinsky Studio. All rights reserved.
+						</p>
+					</div>
+
+					<div class="flex items-center gap-4">
+						<!-- Theme Switcher -->
+						<button
+							type="button"
+							id="themeSwitcher"
+							class="inline-flex items-center justify-center h-6 text-xs text-gray-500 hover:text-gray-700 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+							aria-label="Toggle theme"
+						>
+							<svg
+								class="h-3.5 w-3.5 dark:hidden"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+								></path>
+							</svg>
+							<svg
+								class="h-3.5 w-3.5 hidden dark:block"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+								></path>
+							</svg>
+						</button>
+
+						<!-- Social Links -->
+						<ul class="flex flex-wrap items-center">
+							<li
+								class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600"
+							>
+								<a
+									class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+									href="https://x.com/pinsky_three"
+									target="_blank"
+									rel="noopener noreferrer">X</a
+								>
+							</li>
+							<li
+								class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600"
+							>
+								<a
+									class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+									href="https://www.instagram.com/pinsky_three"
+									target="_blank"
+									rel="noopener noreferrer">Instagram</a
+								>
+							</li>
+							<li class="inline-block">
+								<a
+									class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+									href="https://www.linkedin.com/in/bregy/"
+									target="_blank"
+									rel="noopener noreferrer">LinkedIn</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- ========== END FOOTER ========== -->
+
+		<!-- JS PLUGINS -->
+		<script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"
+		></script>
+
+		<!-- Theme Initialization -->
+		<script>
+			class ThemeSwitcher {
+				private root: HTMLElement;
+				private switcher: HTMLElement | null;
+				private mediaQuery: MediaQueryList;
+
+				constructor() {
+					this.root = document.documentElement;
+					this.switcher = document.getElementById("themeSwitcher");
+					this.mediaQuery = window.matchMedia(
+						"(prefers-color-scheme: dark)",
+					);
+
+					// Initialize theme
+					this.init();
+					this.addEventListeners();
+				}
+
+				init(): void {
+					// Check for stored preference
+					const storedTheme = localStorage.getItem("theme") as
+						| "light"
+						| "dark"
+						| null;
+
+					if (storedTheme) {
+						// Use stored preference if it exists
+						this.applyTheme(storedTheme);
+					} else {
+						// Use system preference for first visit
+						const systemTheme = this.mediaQuery.matches
+							? "dark"
+							: "light";
+						this.applyTheme(systemTheme);
+					}
+				}
+
+				addEventListeners(): void {
+					// Theme toggle click
+					if (this.switcher) {
+						this.switcher.addEventListener("click", () =>
+							this.toggleTheme(),
+						);
+					}
+
+					// System theme change - only apply if no stored preference
+					this.mediaQuery.addEventListener(
+						"change",
+						(e: MediaQueryListEvent) => {
+							if (!localStorage.getItem("theme")) {
+								this.applyTheme(e.matches ? "dark" : "light");
+							}
+						},
+					);
+				}
+
+				toggleTheme(): void {
+					const currentTheme = this.root.classList.contains("dark")
+						? "dark"
+						: "light";
+					const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+					this.applyTheme(newTheme);
+				}
+
+				applyTheme(theme: "light" | "dark"): void {
+					// Remove both classes first
+					this.root.classList.remove("light", "dark");
+					// Add the new theme class
+					this.root.classList.add(theme);
+					// Store the preference
+					localStorage.setItem("theme", theme);
+				}
+			}
+
+			// Initialize theme switcher when DOM is ready
+			document.addEventListener("DOMContentLoaded", () => {
+				new ThemeSwitcher();
+			});
+		</script>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

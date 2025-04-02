@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Portfolio | Pinsky Studio - Artwork Gallery">
+    <main id="content" class="pt-16">
+        <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section class="py-10">
+                <h1
+                    class="mb-5 text-xl font-medium text-gray-800 dark:text-neutral-200"
+                >
+                    Portfolio
+                </h1>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                    <!-- Original Works -->
+                    <a href="/portfolio/originals" class="group block">
+                        <div
+                            class="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
+                        >
+                            <img
+                                src="/placeholder-originals.jpg"
+                                alt="Original Physical Artworks"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <h2
+                            class="mt-4 text-lg font-medium text-gray-800 dark:text-neutral-200"
+                        >
+                            Original Physical Artworks
+                        </h2>
+                        <p
+                            class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
+                        >
+                            Unique pieces combining algorithmic precision with
+                            traditional media
+                        </p>
+                    </a>
+
+                    <!-- Limited Editions -->
+                    <a href="/portfolio/limited-editions" class="group block">
+                        <div
+                            class="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
+                        >
+                            <img
+                                src="/placeholder-editions.jpg"
+                                alt="Limited Edition Prints"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <h2
+                            class="mt-4 text-lg font-medium text-gray-800 dark:text-neutral-200"
+                        >
+                            Limited Edition Prints
+                        </h2>
+                        <p
+                            class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
+                        >
+                            Carefully curated series of plotter drawings and
+                            prints
+                        </p>
+                    </a>
+
+                    <!-- Digital Art -->
+                    <a href="/portfolio/digital" class="group block">
+                        <div
+                            class="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
+                        >
+                            <img
+                                src="/placeholder-digital.jpg"
+                                alt="Digital Art Projects"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <h2
+                            class="mt-4 text-lg font-medium text-gray-800 dark:text-neutral-200"
+                        >
+                            Digital Art Projects
+                        </h2>
+                        <p
+                            class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
+                        >
+                            Generative art and digital explorations
+                        </p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+</Layout>
