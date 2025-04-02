@@ -83,127 +83,105 @@
 
   <body class="dark:bg-neutral-900">
     <!-- ========== HEADER ========== -->
-    <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
-      <nav
-        class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-full mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700"
-      >
-        <div class="px-4 md:px-0 flex justify-between items-center">
-          <div class="flex items-center">
-            <!-- Logo -->
-            <a
-              class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-hidden focus:opacity-80"
-              href="https://pinsky.studio/"
-              aria-label="Pinsky Studio"
-            >
-              <svg
-                class="w-24 h-auto"
-                width="116"
-                height="32"
-                viewBox="0 0 116 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <!-- (Logo SVG paths – can be customized as needed) -->
-                <path
-                  d="M33.5696 30.8182V11.3182H37.4474V13.7003H37.6229C37.7952 13.3187 38.0445 12.9309 38.3707 12.5369C38.7031 12.1368 39.134 11.8045 39.6634 11.5398C40.1989 11.2689 40.8636 11.1335 41.6577 11.1335C42.6918 11.1335 43.6458 11.4044 44.5199 11.946C45.3939 12.4815 46.0926 13.291 46.6158 14.3743C47.139 15.4515 47.4006 16.8026 47.4006 18.4276C47.4006 20.0095 47.1451 21.3452 46.6342 22.4347C46.1295 23.518 45.4401 24.3397 44.5661 24.8999C43.6982 25.4538 42.7256 25.7308 41.6484 25.7308C40.8852 25.7308 40.2358 25.6046 39.7003 25.3523C39.1709 25.0999 38.737 24.7829 38.3984 24.4013C38.0599 24.0135 37.8014 23.6226 37.6229 23.2287H37.5028V30.8182H33.5696ZM37.4197 18.4091C37.4197 19.2524 37.5367 19.9879 37.7706 20.6158C38.0045 21.2436 38.343 21.733 38.7862 22.0838C39.2294 22.4285 39.768 22.6009 40.402 22.6009C41.0421 22.6009 41.5838 22.4254 42.027 22.0746C42.4702 21.7176 42.8056 21.2251 43.0334 20.5973C43.2673 19.9633 43.3842 19.2339 43.3842 18.4091C43.3842 17.5904 43.2704 16.8703 43.0426 16.2486C42.8149 15.6269 42.4794 15.1406 42.0362 14.7898C41.593 14.4389 41.0483 14.2635 40.402 14.2635C39.7618 14.2635 39.2202 14.4328 38.777 14.7713C38.34 15.1098 38.0045 15.59 37.7706 16.2116C37.5367 16.8333 37.4197 17.5658 37.4197 18.4091ZM49.2427 25.5V11.3182H53.0559V13.7926H53.2037C53.4622 12.9124 53.8961 12.2476 54.5055 11.7983C55.1149 11.3428 55.8166 11.1151 56.6106 11.1151C56.8076 11.1151 57.02 11.1274 57.2477 11.152C57.4754 11.1766 57.6755 11.2105 57.8478 11.2536V14.7436C57.6632 14.6882 57.4077 14.639 57.0815 14.5959C56.7553 14.5528 56.4567 14.5312 56.1859 14.5312C55.6073 14.5312 55.0903 14.6574 54.6348 14.9098C54.1854 15.156 53.8284 15.5007 53.5638 15.9439C53.3052 16.3871 53.176 16.898 53.176 17.4766V25.5H49.2427ZM64.9043 25.777C63.4455 25.777 62.1898 25.4815 61.1373 24.8906C60.0909 24.2936 59.2845 23.4503 58.7182 22.3608C58.1519 21.2652 57.8688 19.9695 57.8688 18.4737C57.8688 17.0149 58.1519 15.7346 58.7182 14.6328C59.2845 13.531 60.0816 12.6723 61.1096 12.0568C62.1437 11.4413 63.3563 11.1335 64.7474 11.1335C65.683 11.1335 66.5539 11.2843 67.3603 11.5859C68.1728 11.8814 68.8806 12.3277 69.4839 12.9247C70.0932 13.5218 70.5672 14.2727 70.9057 15.1776C71.2443 16.0762 71.4135 17.1288 71.4135 18.3352V19.4155H59.4384V16.978H67.7111C67.7111 16.4117 67.588 15.91 67.3418 15.473C67.0956 15.036 66.754 14.6944 66.317 14.4482C65.8861 14.1958 65.3844 14.0696 64.812 14.0696C64.2149 14.0696 63.6856 14.2081 63.2239 14.4851C62.7684 14.7559 62.4114 15.1222 62.1529 15.5838C61.8944 16.0393 61.762 16.5471 61.7559 17.1072V19.4247C61.7559 20.1264 61.8851 20.7327 62.1437 21.2436C62.4083 21.7545 62.7807 22.1484 63.2608 22.4254C63.741 22.7024 64.3103 22.8409 64.9689 22.8409C65.406 22.8409 65.8061 22.7794 66.1692 22.6562C66.5324 22.5331 66.8432 22.3485 67.1018 22.1023C67.3603 21.8561 67.5572 21.5545 67.6927 21.1974L71.3304 21.4375C71.1458 22.3116 70.7672 23.0748 70.1948 23.7273C69.6285 24.3736 68.896 24.8783 67.9974 25.2415C67.1048 25.5985 66.0738 25.777 64.9043 25.777ZM77.1335 6.59091V25.5H73.2003V6.59091H77.1335ZM79.5043 25.5V11.3182H83.4375V25.5H79.5043ZM81.4801 9.49006C80.8954 9.49006 80.3937 9.29616 79.9752 8.90838C79.5628 8.51444 79.3566 8.04356 79.3566 7.49574C79.3566 6.95407 79.5628 6.48935 79.9752 6.10156C80.3937 5.70762 80.8954 5.51065 81.4801 5.51065C82.0649 5.51065 82.5635 5.70762 82.9759 6.10156C83.3944 6.48935 83.6037 6.95407 83.6037 7.49574C83.6037 8.04356 83.3944 8.51444 82.9759 8.90838C82.5635 9.29616 82.0649 9.49006 81.4801 9.49006ZM89.7415 17.3011V25.5H85.8083V11.3182H89.5569V13.8203H89.723C90.037 12.9955 90.5632 12.343 91.3019 11.8629C92.0405 11.3767 92.9361 11.1335 93.9887 11.1335C94.9735 11.1335 95.8322 11.349 96.5647 11.7798C97.2971 12.2107 97.8665 12.8262 98.2728 13.6264C98.679 14.4205 98.8821 15.3684 98.8821 16.4702V25.5H94.9489V17.1719C94.9551 16.304 94.7335 15.6269 94.2841 15.1406C93.8348 14.6482 93.2162 14.402 92.4283 14.402C91.5143 14.402 90.7192 14.4566 90.2348 14.6829C89.9505 14.8297 89.6361 15.3488 89.6361 15.6919C89.6361 15.8975 89.9985 16.0053 90.782 16.0053H91.1924V25.1139L81.5561 25.3196C80.0361 25.4763 79.4177 25.5741 79.3298 25.7698C79.1731 26.1031 79.182 26.4066 79.3387 26.4066C79.3975 26.4066 80.5043 26.3378 81.7772 26.2598C84.2943 26.113 84.578 26.0442 84.8425 25.5252C84.9211 25.3685 84.9893 25.2019 84.9893 25.1529C84.9893 25.1139 84.6468 24.9962 84.2348 24.8984C83.8146 24.8005 83.3934 24.7027 83.3055 24.6828C83.1389 24.6339 83.1289 24.3304 83.1289 20.1186V15.6033L86.1063 20.2753C89.2305 25.1721 89.6225 25.7308 90.1025 25.9755C90.7 26.2889 92.2181 26.0733 92.9818 25.5741L93.2172 25.4273L93.237 18.7479L93.2661 12.0586L93.7852 11.9608C94.4021 11.8431 94.6864 11.5594 94.6864 11.0695C94.6864 10.7561 94.6666 10.7362 94.373 10.7462C94.1977 10.7542 93.1887 10.813 92.1407 10.8818C92.1176 10.8818 92.0978 10.8618 92.077 10.841C91.9896 10.7018 91.9198 10.5415 91.9198 10.4415C91.9198 10.3415 91.949 10.2613 91.9883 10.221C93.1518 9.92654 94.2567 9.45784 95.3643 8.99626C95.3643 8.99626 95.944 8.76856 96.0328 8.76856C97.264 8.76856 98.5053 8.76856 99.7427 8.76856C100.145 8.76856 100.547 8.76856 100.949 8.76856C102.186 8.76856 103.428 8.76856 104.66 8.76856C105.066 8.76856 105.471 8.76856 105.877 8.76856C107.109 8.76856 108.35 8.76856 109.584 8.76856C110.002 8.76856 110.419 8.76856 110.837 8.76856C112.071 8.76856 113.312 8.76856 114.545 8.76856C114.953 8.76856 115.362 8.76856 115.77 8.76856C117.005 8.76856 118.247 8.76856 119.481 8.76856C119.888 8.76856 120.294 8.76856 120.701 8.76856C121.935 8.76856 123.176 8.76856 124.41 8.76856C124.817 8.76856 125.223 8.76856 125.63 8.76856C126.865 8.76856 128.107 8.76856 129.341 8.76856C129.749 8.76856 130.155 8.76856 130.562 8.76856C131.797 8.76856 133.038 8.76856 134.272 8.76856C134.68 8.76856 135.085 8.76856 135.492 8.76856C136.727 8.76856 137.969 8.76856 139.203 8.76856C139.611 8.76856 140.017 8.76856 140.424 8.76856C141.658 8.76856 142.9 8.76856 144.135 8.76856C144.543 8.76856 144.949 8.76856 145.356 8.76856C146.59 8.76856 147.832 8.76856 149.066 8.76856C149.474 8.76856 149.88 8.76856 150.287 8.76856C151.521 8.76856 152.762 8.76856 154.0 8.76856L154.0 8.76856V8.76856Z"
-                    style="display: none"
-                  ></path>
-                <!-- (End Logo SVG – you can replace with your own logo) -->
-              </svg>
-              Pinsky Studio
+    <header class="fixed w-full top-0 z-50 bg-neutral-900/80 backdrop-blur-lg border-b border-white/10">
+      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-x-3 text-xl font-semibold text-white hover:text-white/80 transition">
+            <div class="relative size-8">
+              <div class="absolute inset-0 rounded-lg bg-gradient-to-tr from-purple-600 to-blue-400 animate-gradient"></div>
+              <div class="absolute inset-0.5 rounded-lg bg-neutral-900 flex items-center justify-center">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">P</span>
+              </div>
+            </div>
+            <span class="hidden sm:inline-block">Pinsky Studio</span>
+          </a>
+          <!-- End Logo -->
+
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center gap-x-8">
+            <a href="#hero" 
+               class="relative py-1.5 text-sm text-white hover:text-white/80 transition group">
+              Home
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </a>
-            <!-- End Logo -->
-          </div>
+            <a href="#gallery" 
+               class="relative py-1.5 text-sm text-white/70 hover:text-white transition group">
+              Gallery
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+            </a>
+            <a href="#about" 
+               class="relative py-1.5 text-sm text-white/70 hover:text-white transition group">
+              About
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+            </a>
+            <a href="#exhibitions" 
+               class="relative py-1.5 text-sm text-white/70 hover:text-white transition group">
+              Exhibitions
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+            </a>
+            <a href="#contact" 
+               class="relative inline-flex items-center justify-center px-4 py-1.5 text-sm text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:from-purple-500 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-purple-500/25">
+              Contact
+            </a>
+          </nav>
+          <!-- End Navigation -->
 
-          <div class="md:hidden">
-            <!-- Toggle Button -->
-            <button
-              type="button"
-              class="hs-collapse-toggle flex justify-center items-center size-7 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-              id="hs-navbar-header-floating-collapse"
-              aria-expanded="false"
-              aria-controls="hs-navbar-header-floating"
-              aria-label="Toggle navigation"
-              data-hs-collapse="#hs-navbar-header-floating"
-            >
-              <svg
-                class="hs-collapse-open:hidden shrink-0 size-3.5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="3" x2="21" y1="6" y2="6"></line>
-                <line x1="3" x2="21" y1="12" y2="12"></line>
-                <line x1="3" x2="21" y1="18" y2="18"></line>
-              </svg>
-              <svg
-                class="hs-collapse-open:block hidden shrink-0 size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M18 6 6 18"></path>
-                <path d="m6 6 12 12"></path>
-              </svg>
-            </button>
-            <!-- End Toggle Button -->
-          </div>
+          <!-- Mobile Menu Button -->
+          <button type="button" 
+                  class="md:hidden inline-flex items-center justify-center size-10 text-white hover:text-white/80 focus:outline-none"
+                  data-hs-collapse="#navbar-collapse">
+            <span class="sr-only">Toggle menu</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path class="hs-collapse-open:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path class="hidden hs-collapse-open:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
         </div>
+      </div>
 
-        <div
-          id="hs-navbar-header-floating"
-          class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block"
-          aria-labelledby="hs-navbar-header-floating-collapse"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7"
-          >
-            <a
-              class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-gray-800 font-medium text-gray-800 dark:text-neutral-200"
-              href="#hero"
-              aria-current="page"
-              >Home</a
-            >
-            <a
-              class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-400 dark:hover:text-neutral-200"
-              href="#gallery"
-              >Gallery</a
-            >
-            <a
-              class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-400 dark:hover:text-neutral-200"
-              href="#about"
-              >About</a
-            >
-            <a
-              class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-400 dark:hover:text-neutral-200"
-              href="#exhibitions"
-              >Exhibitions</a
-            >
-            <a
-              class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-hidden dark:text-neutral-400 dark:hover:text-neutral-200"
-              href="#contact"
-              >Contact</a
-            >
-          </div>
-        </div>
-      </nav>
+      <!-- Mobile Menu -->
+      <div id="navbar-collapse" 
+           class="hidden md:hidden absolute top-full left-0 right-0 bg-neutral-900/95 backdrop-blur-lg border-t border-white/10">
+        <nav class="flex flex-col p-6 gap-y-4">
+          <a href="#hero" 
+             class="text-sm text-white hover:text-white/80 transition">
+            Home
+          </a>
+          <a href="#gallery" 
+             class="text-sm text-white/70 hover:text-white transition">
+            Gallery
+          </a>
+          <a href="#about" 
+             class="text-sm text-white/70 hover:text-white transition">
+            About
+          </a>
+          <a href="#exhibitions" 
+             class="text-sm text-white/70 hover:text-white transition">
+            Exhibitions
+          </a>
+          <a href="#contact" 
+             class="inline-flex items-center justify-center px-4 py-1.5 text-sm text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:from-purple-500 hover:to-blue-400 transition-all duration-300">
+            Contact
+          </a>
+        </nav>
+      </div>
     </header>
-    <!-- ========== END HEADER ========== -->
+
+    <style>
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animate-gradient {
+        background-size: 200% auto;
+        animation: gradient 8s ease infinite;
+      }
+    </style>
 
     <!-- ========== MAIN CONTENT ========== -->
-    <main id="content">
+    <main id="content" class="pt-16">
       <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- HERO SECTION -->
         <section id="hero" class="text-center py-16">
