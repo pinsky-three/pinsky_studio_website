@@ -554,7 +554,7 @@
 				// Initialize all components
 				(window as any).HSStaticMethods.autoInit();
 
-				// Initialize dropdown
+				// Initialize desktop dropdown
 				const dropdownToggle = document.getElementById(
 					"portfolio-dropdown-toggle",
 				);
@@ -588,6 +588,49 @@
 								"false",
 							);
 						}
+					});
+				}
+
+				// Initialize mobile menu
+				const mobileMenuButton = document.querySelector(
+					'[data-hs-collapse="#navbar-collapse"]',
+				);
+				const mobileMenu = document.getElementById("navbar-collapse");
+				const mobileMenuIcon = mobileMenuButton?.querySelector("svg");
+
+				if (mobileMenuButton && mobileMenu && mobileMenuIcon) {
+					mobileMenuButton.addEventListener("click", () => {
+						const isOpen = !mobileMenu.classList.contains("hidden");
+						mobileMenu.classList.toggle("hidden");
+						mobileMenuButton.setAttribute(
+							"aria-expanded",
+							(!isOpen).toString(),
+						);
+						mobileMenuIcon.classList.toggle("hs-collapse-open");
+					});
+				}
+
+				// Initialize mobile portfolio submenu
+				const mobilePortfolioButton = document.querySelector(
+					'[data-hs-collapse="#portfolio-submenu"]',
+				);
+				const mobilePortfolioMenu =
+					document.getElementById("portfolio-submenu");
+				const mobilePortfolioArrow =
+					mobilePortfolioButton?.querySelector("svg");
+
+				if (
+					mobilePortfolioButton &&
+					mobilePortfolioMenu &&
+					mobilePortfolioArrow
+				) {
+					mobilePortfolioButton.addEventListener("click", () => {
+						const isOpen =
+							!mobilePortfolioMenu.classList.contains("hidden");
+						mobilePortfolioMenu.classList.toggle("hidden");
+						mobilePortfolioArrow.style.transform = isOpen
+							? "rotate(0deg)"
+							: "rotate(180deg)";
 					});
 				}
 			});
