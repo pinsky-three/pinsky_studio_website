@@ -3,78 +3,201 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Pinsky Studio - Digital Art & Algorithmic Creativity">
-  <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- HERO SECTION -->
-    <section
-      id="hero"
-      class="py-16 border-b border-gray-200 dark:border-neutral-800"
+  <!-- FULLSCREEN HERO CAROUSEL WITH TEXT OVERLAY -->
+  <section id="hero-carousel" class="relative w-full h-screen overflow-hidden">
+    <!-- Studio introduction text overlay -->
+    <div
+      class="absolute top-0 left-0 right-0 z-10 p-6 md:p-8 bg-gradient-to-b from-black/90 via-black/50 to-transparent"
     >
-      <h1 class="text-2xl font-medium text-gray-800 dark:text-white mb-2">
-        Pinsky Studio
-      </h1>
-      <p class="text-sm text-gray-600 dark:text-neutral-400 mb-8">
-        A digital studio exploring the intersection of algorithmic processes,
-        formal systems, and tangible art
-      </p>
-      <div class="space-y-6">
-        <p class="text-sm text-gray-600 dark:text-neutral-400">
+      <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl md:text-3xl font-medium text-white mb-2">
+          Pinsky Studio
+        </h1>
+        <p class="text-sm md:text-base text-white/90 mb-4">
+          A digital studio exploring the intersection of algorithmic processes,
+          formal systems, and tangible art
+        </p>
+        <p class="text-xs md:text-sm text-white/80 max-w-xl">
           Pinsky's art explores recursive structures and complex systems in
           nature and mathematics, probing the boundaries of perception and time.
-          Embracing technology not just as a tool but as a collaborator and even
-          a metaphor, Pinsky blends generative algorithms and custom plotter
-          hardware with traditional artistic techniques.
-        </p>
-        <p class="text-sm text-gray-600 dark:text-neutral-400">
-          This interplay of the algorithmic and the handmade yields a unique
-          fusion of mathematical precision and organic expression, producing
-          intricate works that spark curiosity and revelation. Informed by
-          computational theory and Constructivist art, and drawing inspiration
-          from visionaries such as M.C. Escher, Vera Molnár, Sol LeWitt, and
-          Manfred Mohr, Pinsky creates art that invites viewers to reimagine how
-          they see reality.
         </p>
       </div>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a
-          href="/studio"
-          class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 rounded-lg transition-colors inline-flex items-center gap-x-1"
-        >
-          Explore Studio
-          <svg
-            class="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
-        <a
-          href="/curated-constructs"
-          class="px-4 py-2 text-sm font-medium text-gray-800 bg-white hover:bg-gray-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 border border-gray-200 dark:border-neutral-700 rounded-lg transition-colors inline-flex items-center gap-x-1"
-        >
-          View Curated Constructs
-          <svg
-            class="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
-      </div>
-    </section>
-    <!-- END HERO SECTION -->
+    </div>
 
+    <!-- Carousel container -->
+    <div class="carousel-container relative w-full h-full">
+      <!-- Carousel slides -->
+      <div
+        class="carousel-slides flex transition-transform duration-500 ease-in-out h-full"
+      >
+        <!-- Slide 1 -->
+        <div class="carousel-slide min-w-full h-full relative">
+          <img
+            src="https://images.unsplash.com/photo-1616131206008-dd041a9764fd?q=80&w=1920&auto=format&fit=crop"
+            alt="Recursive Pattern #1"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center pb-24"
+          >
+            <div class="text-center text-white p-8 max-w-2xl">
+              <h2 class="text-3xl font-medium mb-4">Recursive Pattern #1</h2>
+              <p class="text-lg mb-6">
+                A visualization of recursive processes in nature, where simple
+                rules create complex forms.
+              </p>
+              <a
+                href="/curated-constructs"
+                class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors inline-flex items-center gap-x-2"
+              >
+                View Collection
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide min-w-full h-full relative">
+          <img
+            src="https://images.unsplash.com/photo-1656618724305-a4257e46e847?q=80&w=1920&auto=format&fit=crop"
+            alt="Emergent Structures #3"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center pb-24"
+          >
+            <div class="text-center text-white p-8 max-w-2xl">
+              <h2 class="text-3xl font-medium mb-4">Emergent Structures #3</h2>
+              <p class="text-lg mb-6">
+                Exploring how complex patterns emerge from simple interactions
+                between elements.
+              </p>
+              <a
+                href="/conceptual-pathways"
+                class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors inline-flex items-center gap-x-2"
+              >
+                Explore Concepts
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide min-w-full h-full relative">
+          <img
+            src="https://images.unsplash.com/photo-1516131206008-dd041a9764fd?q=80&w=1920&auto=format&fit=crop"
+            alt="Algorithmic Aesthetics"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-center pb-24"
+          >
+            <div class="text-center text-white p-8 max-w-2xl">
+              <h2 class="text-3xl font-medium mb-4">Algorithmic Aesthetics</h2>
+              <p class="text-lg mb-6">
+                Where formal systems become visual structure through
+                computational processes.
+              </p>
+              <a
+                href="/studio"
+                class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-lg hover:bg-white/20 transition-colors inline-flex items-center gap-x-2"
+              >
+                Visit Studio
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <button
+        id="prev-slide"
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white/90 transition-colors"
+      >
+        <svg
+          class="w-8 h-8"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button
+        id="next-slide"
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white/90 transition-colors"
+      >
+        <svg
+          class="w-8 h-8"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Carousel indicators -->
+      <div
+        class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2"
+      >
+        <button
+          class="carousel-indicator w-2 h-2 rounded-full bg-white/40 hover:bg-white/90 transition-colors"
+          data-index="0"></button>
+        <button
+          class="carousel-indicator w-2 h-2 rounded-full bg-white/40 hover:bg-white/90 transition-colors"
+          data-index="1"></button>
+        <button
+          class="carousel-indicator w-2 h-2 rounded-full bg-white/40 hover:bg-white/90 transition-colors"
+          data-index="2"></button>
+      </div>
+    </div>
+  </section>
+  <!-- END FULLSCREEN HERO CAROUSEL WITH TEXT OVERLAY -->
+
+  <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- PORTAL SECTIONS -->
     <section class="py-16 border-b border-gray-200 dark:border-neutral-800">
       <h2 class="mb-8 text-xl font-medium text-gray-800 dark:text-neutral-200">
@@ -484,7 +607,7 @@ import Layout from "../layouts/Layout.astro";
       </p>
       <div class="mt-6">
         <a
-          href="/about"
+          href="/connect"
           class="px-4 py-2 text-sm font-medium text-gray-800 bg-white hover:bg-gray-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 border border-gray-200 dark:border-neutral-700 rounded-lg transition-colors inline-flex items-center gap-x-1"
         >
           Learn more about our practice
@@ -560,3 +683,67 @@ import Layout from "../layouts/Layout.astro";
     <!-- END CONTACT SECTION -->
   </div>
 </Layout>
+
+<script>
+  // Carousel functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".carousel-slides") as HTMLElement;
+    const slides = document.querySelectorAll(".carousel-slide");
+    const indicators = document.querySelectorAll(".carousel-indicator");
+    const prevButton = document.getElementById("prev-slide");
+    const nextButton = document.getElementById("next-slide");
+
+    // Exit if required elements are not found
+    if (!carousel || !prevButton || !nextButton || slides.length === 0) {
+      console.error("Carousel elements not found");
+      return;
+    }
+
+    let currentIndex = 0;
+    const slideCount = slides.length;
+
+    // Function to update carousel position
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add("bg-white");
+          indicator.classList.remove("bg-opacity-50");
+        } else {
+          indicator.classList.remove("bg-white");
+          indicator.classList.add("bg-opacity-50");
+        }
+      });
+    }
+
+    // Event listeners for buttons
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      updateCarousel();
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateCarousel();
+    });
+
+    // Event listeners for indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+
+    // Auto-advance carousel every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateCarousel();
+    }, 5000);
+
+    // Initialize carousel
+    updateCarousel();
+  });
+</script>
