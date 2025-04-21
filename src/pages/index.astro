@@ -9,6 +9,28 @@ import Layout from "../layouts/Layout.astro";
       id="hero"
       class="py-16 border-b border-gray-200 dark:border-neutral-800"
     >
+      <!-- Featured Banner - Patreon Launch -->
+      <div class="mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg overflow-hidden shadow-sm">
+        <div class="flex items-center justify-between p-4">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+              New Launch
+            </span>
+            <h2 class="text-sm font-medium text-white">Join My Patreon Community</h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="/patreon" class="inline-flex items-center px-3 py-1 text-xs font-medium text-indigo-600 bg-white rounded-lg hover:bg-gray-50 transition-colors">
+              Learn More
+            </a>
+            <button id="close-banner" class="text-white/80 hover:text-white">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <h1 class="text-2xl font-medium text-gray-800 dark:text-white mb-2">
         Pinsky Studio
       </h1>
@@ -36,10 +58,10 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div class="mt-8 flex flex-wrap gap-4">
         <a
-          href="/studio"
+          href="/portfolio"
           class="px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 rounded-lg transition-colors inline-flex items-center gap-x-1"
         >
-          Explore Studio
+          Explore Portfolio
           <svg
             class="w-4 h-4"
             viewBox="0 0 24 24"
@@ -54,10 +76,10 @@ import Layout from "../layouts/Layout.astro";
           </svg>
         </a>
         <a
-          href="/curated-constructs"
+          href="/commissions"
           class="px-4 py-2 text-sm font-medium text-gray-800 bg-white hover:bg-gray-50 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 border border-gray-200 dark:border-neutral-700 rounded-lg transition-colors inline-flex items-center gap-x-1"
         >
-          View Curated Constructs
+          Commission Custom Art
           <svg
             class="w-4 h-4"
             viewBox="0 0 24 24"
@@ -560,3 +582,15 @@ import Layout from "../layouts/Layout.astro";
     <!-- END CONTACT SECTION -->
   </div>
 </Layout>
+
+<!-- Add script to handle banner closing -->
+<script>
+  const closeButton = document.getElementById('close-banner');
+  const banner = closeButton?.closest('.mb-8') as HTMLElement;
+  
+  closeButton?.addEventListener('click', function() {
+    if (banner) {
+      banner.style.display = 'none';
+    }
+  });
+</script>

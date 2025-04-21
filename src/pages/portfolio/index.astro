@@ -2,87 +2,190 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Portfolio | Pinsky Studio - Artwork Gallery">
+<Layout title="Portfolio | Pinsky Studio - Mathematical & Algorithmic Art">
     <main id="content" class="pt-16">
         <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <section class="py-10">
-                <h1
-                    class="mb-5 text-xl font-medium text-gray-800 dark:text-neutral-200"
-                >
+            <section class="py-10 border-b border-gray-200 dark:border-neutral-800">
+                <h1 class="mb-5 text-xl font-medium text-gray-800 dark:text-neutral-200">
                     Portfolio
                 </h1>
+                <p class="text-sm text-gray-600 dark:text-neutral-400 mb-8">
+                    Explore Pinsky's portfolio of algorithmic and generative artwork, organized into thematic collections exploring different aspects of mathematical art.
+                </p>
+            </section>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                    <!-- Original Works -->
-                    <a href="/portfolio/originals" class="group block">
-                        <div
-                            class="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
-                        >
-                            <img
-                                src="/placeholder-originals.jpg"
-                                alt="Original Physical Artworks"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
+            <!-- Collection Showcases -->
+            <section class="py-10 border-b border-gray-200 dark:border-neutral-800">
+                <h2 class="mb-6 text-lg font-medium text-gray-800 dark:text-neutral-200">
+                    Thematic Collections
+                </h2>
+                
+                <!-- Combinatoria del Caos -->
+                <div class="mb-12 border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="/portfolio-combinatoria.jpg" 
+                            alt="Combinatoria del Caos - Algorithmic Chaos and Complex Systems" 
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-medium text-white mb-1">Combinatoria del Caos</h3>
+                                <p class="text-white/80 text-sm">Complex systems and emergent patterns</p>
+                            </div>
                         </div>
-                        <h2
-                            class="mt-4 text-lg font-medium text-gray-800 dark:text-neutral-200"
-                        >
-                            Original Physical Artworks
-                        </h2>
-                        <p
-                            class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
-                        >
-                            Unique pieces combining algorithmic precision with
-                            traditional media
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-600 dark:text-neutral-400 mb-4">
+                            Explores the beauty that emerges from chaotic systems, using generative algorithms to visualize complex mathematical phenomena like strange attractors, fractal landscapes, and cellular automata.
                         </p>
-                    </a>
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <img src="/portfolio-thumb-1.jpg" alt="Combinatoria work 1" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-2.jpg" alt="Combinatoria work 2" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-3.jpg" alt="Combinatoria work 3" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                        </div>
+                        <a href="/portfolio/combinatoria-del-caos" class="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium">
+                            View Collection
+                            <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Topologías del Cuerpo -->
+                <div class="mb-12 border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="/portfolio-topologias.jpg" 
+                            alt="Topologías del Cuerpo - Biomorphic Forms" 
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-medium text-white mb-1">Topologías del Cuerpo</h3>
+                                <p class="text-white/80 text-sm">Biomorphic forms and organic structures</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-600 dark:text-neutral-400 mb-4">
+                            Investigates the topological properties of biological forms, visualizing the mathematical principles that govern growth, form, and structure in living organisms. These works blend algorithmic precision with organic fluidity.
+                        </p>
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <img src="/portfolio-thumb-4.jpg" alt="Topologías work 1" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-5.jpg" alt="Topologías work 2" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-6.jpg" alt="Topologías work 3" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                        </div>
+                        <a href="/portfolio/topologias-del-cuerpo" class="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium">
+                            View Collection
+                            <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Equivalencias Invisibles -->
+                <div class="mb-12 border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="/portfolio-equivalencias.jpg" 
+                            alt="Equivalencias Invisibles - Abstract Data Visualization" 
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-medium text-white mb-1">Equivalencias Invisibles</h3>
+                                <p class="text-white/80 text-sm">Abstract data visualization</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-600 dark:text-neutral-400 mb-4">
+                            Transforms invisible data streams and mathematical relationships into visual equivalents. These works render abstract concepts like statistical distributions, network topologies, and information flows as tangible aesthetic experiences.
+                        </p>
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <img src="/portfolio-thumb-7.jpg" alt="Equivalencias work 1" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-8.jpg" alt="Equivalencias work 2" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-9.jpg" alt="Equivalencias work 3" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                        </div>
+                        <a href="/portfolio/equivalencias-invisibles" class="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium">
+                            View Collection
+                            <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Transformaciones Silenciosas -->
+                <div class="mb-6 border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="/portfolio-transformaciones.jpg" 
+                            alt="Transformaciones Silenciosas - Geometric Transformations" 
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-medium text-white mb-1">Transformaciones Silenciosas</h3>
+                                <p class="text-white/80 text-sm">Subtle geometric transformations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-gray-600 dark:text-neutral-400 mb-4">
+                            Examines mathematical transformations that occur gradually and almost imperceptibly, building complex visual systems through small, incremental changes. These works employ recursive algorithms and iterative processes to create evolving geometric forms.
+                        </p>
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <img src="/portfolio-thumb-10.jpg" alt="Transformaciones work 1" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-11.jpg" alt="Transformaciones work 2" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                            <img src="/portfolio-thumb-12.jpg" alt="Transformaciones work 3" class="w-full h-24 object-cover rounded bg-gray-100 dark:bg-neutral-800" />
+                        </div>
+                        <a href="/portfolio/transformaciones-silenciosas" class="inline-flex items-center text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium">
+                            View Collection
+                            <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-                    <!-- Limited Editions -->
-                    <a href="/portfolio/limited-editions" class="group block">
-                        <div
-                            class="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
-                        >
-                            <img
-                                src="/placeholder-editions.jpg"
-                                alt="Limited Edition Prints"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                        </div>
-                        <h2
-                            class="mt-4 text-lg font-medium text-gray-800 dark:text-neutral-200"
-                        >
-                            Limited Edition Prints
-                        </h2>
-                        <p
-                            class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
-                        >
-                            Carefully curated series of plotter drawings and
-                            prints
+            <!-- Process & Techniques -->
+            <section class="py-10">
+                <h2 class="mb-6 text-lg font-medium text-gray-800 dark:text-neutral-200">
+                    Process & Techniques
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h3 class="text-base font-medium text-gray-700 dark:text-neutral-300 mb-2">Algorithmic Methods</h3>
+                        <p class="text-sm text-gray-600 dark:text-neutral-400">
+                            Each artwork begins with a core mathematical concept, which is then translated into code using languages such as Processing, p5.js, or custom C++ frameworks. These algorithms create visual outputs that would be impossible to produce by hand.
                         </p>
-                    </a>
-
-                    <!-- Digital Art -->
-                    <a href="/portfolio/digital" class="group block">
-                        <div
-                            class="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
-                        >
-                            <img
-                                src="/placeholder-digital.jpg"
-                                alt="Digital Art Projects"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                        </div>
-                        <h2
-                            class="mt-4 text-lg font-medium text-gray-800 dark:text-neutral-200"
-                        >
-                            Digital Art Projects
-                        </h2>
-                        <p
-                            class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
-                        >
-                            Generative art and digital explorations
+                    </div>
+                    <div>
+                        <h3 class="text-base font-medium text-gray-700 dark:text-neutral-300 mb-2">Physical Production</h3>
+                        <p class="text-sm text-gray-600 dark:text-neutral-400">
+                            The algorithmic outputs are realized through a combination of techniques, including custom-built plotting machines, archival pigment printing, and hand-finishing processes that add unique material qualities to each piece.
                         </p>
-                    </a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-6">
+                    <h3 class="text-base font-medium text-gray-700 dark:text-neutral-300 mb-3">Acquisition Information</h3>
+                    <p class="text-sm text-gray-600 dark:text-neutral-400 mb-4">
+                        Most works are available as limited edition prints or original plotter drawings. For purchase inquiries or to commission custom work, please visit the shop or commissions pages.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="/shop" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors dark:bg-indigo-500 dark:hover:bg-indigo-600">
+                            Available Prints
+                        </a>
+                        <a href="/commissions" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors dark:bg-neutral-700 dark:text-neutral-200 dark:border-neutral-600 dark:hover:bg-neutral-600">
+                            Commission Custom Work
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>

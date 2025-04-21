@@ -5,118 +5,330 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="Shop | Pinsky Studio - Artworks & Prints">
     <main id="content" class="pt-16">
         <div class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <section class="py-10">
-                <h1
-                    class="mb-5 text-xl font-medium text-gray-800 dark:text-neutral-200"
-                >
+            <section class="py-10 border-b border-gray-200 dark:border-neutral-800">
+                <h1 class="mb-5 text-xl font-medium text-gray-800 dark:text-neutral-200">
                     Shop
                 </h1>
+                <p class="text-sm text-gray-600 dark:text-neutral-400 mb-8">
+                    Discover limited edition prints, original works, and digital downloads of Pinsky's mathematical and algorithmic art.
+                </p>
+
+                <!-- Shop Notice -->
+                <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4 mb-8 border border-gray-200 dark:border-neutral-700">
+                    <div class="flex items-start">
+                        <svg class="h-5 w-5 text-indigo-500 mr-3 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-800 dark:text-white mb-1">Shipping Information</h3>
+                            <p class="text-xs text-gray-600 dark:text-neutral-400">
+                                Free worldwide shipping on orders over $150. Standard shipping (7-10 business days) is $12.
+                                Expedited shipping (3-5 business days) is available for $25. All prints ship in protective tubes or flat packaging.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Collection -->
+            <section class="py-10 border-b border-gray-200 dark:border-neutral-800">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-lg font-medium text-gray-800 dark:text-neutral-200">
+                        Featured Collection
+                    </h2>
+                    <a href="/shop/combinatoria-series" class="text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 flex items-center">
+                        View all
+                        <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
 
                 <!-- Featured Items -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <!-- Featured Item -->
-                    <article class="group">
-                        <div
-                            class="aspect-square rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
-                        >
+                    <article class="group border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                        <div class="aspect-square bg-gray-100 dark:bg-neutral-800 relative">
                             <img
                                 src="/placeholder-shop1.jpg"
-                                alt="Artwork Preview"
+                                alt="Recursive Pattern #1"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
+                            <div class="absolute top-2 right-2">
+                                <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200">
+                                    Limited Edition
+                                </span>
+                            </div>
                         </div>
-                        <div class="mt-4">
-                            <h2
-                                class="text-lg font-medium text-gray-800 dark:text-neutral-200"
-                            >
+                        <div class="p-4">
+                            <h3 class="text-base font-medium text-gray-800 dark:text-neutral-200">
                                 Recursive Pattern #1
-                            </h2>
-                            <p
-                                class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
-                            >
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
                                 Limited Edition Print
                             </p>
-                            <p
-                                class="mt-2 text-sm text-gray-500 dark:text-neutral-500"
-                            >
-                                Edition of 50
-                            </p>
-                            <div class="mt-4">
-                                <button
-                                    class="w-full px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors"
-                                >
+                            <div class="mt-1 flex items-center justify-between">
+                                <p class="text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                    $175.00
+                                </p>
+                                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                                    Edition of 50
+                                </p>
+                            </div>
+                            <div class="mt-3 text-xs text-gray-500 dark:text-neutral-500">
+                                <span>Available: 18 × 24 in, 24 × 36 in</span>
+                            </div>
+                            <div class="mt-4 grid grid-cols-2 gap-2">
+                                <button class="px-3 py-2 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors">
                                     Add to Cart
                                 </button>
+                                <a href="/shop/recursive-pattern-1" class="px-3 py-2 text-xs font-medium text-center text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 dark:text-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors">
+                                    Details
+                                </a>
                             </div>
                         </div>
                     </article>
 
                     <!-- Featured Item -->
-                    <article class="group">
-                        <div
-                            class="aspect-square rounded-lg overflow-hidden bg-gray-100 dark:bg-neutral-800"
-                        >
+                    <article class="group border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                        <div class="aspect-square bg-gray-100 dark:bg-neutral-800 relative">
                             <img
                                 src="/placeholder-shop2.jpg"
-                                alt="Artwork Preview"
+                                alt="Digital Horizon #3"
                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
+                            <div class="absolute top-2 right-2">
+                                <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                    New Release
+                                </span>
+                            </div>
                         </div>
-                        <div class="mt-4">
-                            <h2
-                                class="text-lg font-medium text-gray-800 dark:text-neutral-200"
-                            >
+                        <div class="p-4">
+                            <h3 class="text-base font-medium text-gray-800 dark:text-neutral-200">
                                 Digital Horizon #3
-                            </h2>
-                            <p
-                                class="mt-1 text-sm text-gray-600 dark:text-neutral-400"
-                            >
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
                                 Limited Edition Print
                             </p>
-                            <p
-                                class="mt-2 text-sm text-gray-500 dark:text-neutral-500"
-                            >
-                                Edition of 50
-                            </p>
-                            <div class="mt-4">
-                                <button
-                                    class="w-full px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors"
-                                >
+                            <div class="mt-1 flex items-center justify-between">
+                                <p class="text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                    $195.00
+                                </p>
+                                <p class="text-xs text-gray-500 dark:text-neutral-500">
+                                    Edition of 35
+                                </p>
+                            </div>
+                            <div class="mt-3 text-xs text-gray-500 dark:text-neutral-500">
+                                <span>Available: 20 × 20 in, 30 × 30 in</span>
+                            </div>
+                            <div class="mt-4 grid grid-cols-2 gap-2">
+                                <button class="px-3 py-2 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors">
                                     Add to Cart
+                                </button>
+                                <a href="/shop/digital-horizon-3" class="px-3 py-2 text-xs font-medium text-center text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 dark:text-neutral-300 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors">
+                                    Details
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Digital Downloads Section -->
+            <section class="py-10 border-b border-gray-200 dark:border-neutral-800">
+                <h2 class="mb-5 text-lg font-medium text-gray-800 dark:text-neutral-200">
+                    Digital Downloads
+                </h2>
+                <div class="mb-5 p-4 border border-indigo-100 dark:border-indigo-900/30 bg-indigo-50 dark:bg-indigo-900/10 rounded-lg">
+                    <p class="text-sm text-indigo-700 dark:text-indigo-300">
+                        Digital downloads include high-resolution JPG, PNG, and vector SVG files perfect for personal use or printing at your preferred lab.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Digital Item -->
+                    <article class="border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                        <div class="aspect-video bg-gray-100 dark:bg-neutral-800">
+                            <img
+                                src="/placeholder-digital1.jpg"
+                                alt="Algorithmic Studies Bundle"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-medium text-gray-800 dark:text-neutral-200">
+                                Algorithmic Studies Bundle
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                                Collection of 5 high-resolution digital works
+                            </p>
+                            <div class="mt-1 flex items-center justify-between">
+                                <p class="text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                    $45.00
+                                </p>
+                                <p class="inline-flex items-center text-xs text-green-600 dark:text-green-400">
+                                    <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Instant Download
+                                </p>
+                            </div>
+                            <div class="mt-4">
+                                <button class="w-full px-3 py-2 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors">
+                                    Purchase Download
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Digital Item -->
+                    <article class="border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                        <div class="aspect-video bg-gray-100 dark:bg-neutral-800">
+                            <img
+                                src="/placeholder-digital2.jpg"
+                                alt="Geometric Abstractions"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base font-medium text-gray-800 dark:text-neutral-200">
+                                Geometric Abstractions
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+                                Set of 3 vector-based geometric works
+                            </p>
+                            <div class="mt-1 flex items-center justify-between">
+                                <p class="text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                    $35.00
+                                </p>
+                                <p class="inline-flex items-center text-xs text-green-600 dark:text-green-400">
+                                    <svg class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                    </svg>
+                                    Instant Download
+                                </p>
+                            </div>
+                            <div class="mt-4">
+                                <button class="w-full px-3 py-2 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors">
+                                    Purchase Download
                                 </button>
                             </div>
                         </div>
                     </article>
                 </div>
+            </section>
 
-                <!-- Categories -->
-                <div class="mt-12">
-                    <h2
-                        class="text-sm font-medium text-gray-800 dark:text-neutral-200 mb-4"
-                    >
-                        Browse by Category:
-                    </h2>
-                    <div class="flex flex-wrap gap-2">
-                        <button
-                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
-                        >
-                            All
-                        </button>
-                        <button
-                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
-                        >
-                            Limited Editions
-                        </button>
-                        <button
-                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
-                        >
-                            Prints
-                        </button>
-                        <button
-                            class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
-                        >
-                            Digital Downloads
-                        </button>
+            <!-- Categories & Filters -->
+            <section class="py-10">
+                <h2 class="text-sm font-medium text-gray-800 dark:text-neutral-200 mb-4">
+                    Browse by Category:
+                </h2>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <button class="px-3 py-1 text-xs rounded-full bg-indigo-100 text-indigo-800 hover:bg-indigo-200 dark:bg-indigo-900 dark:text-indigo-200 dark:hover:bg-indigo-800">
+                        All
+                    </button>
+                    <button class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700">
+                        Limited Editions
+                    </button>
+                    <button class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700">
+                        Prints
+                    </button>
+                    <button class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700">
+                        Digital Downloads
+                    </button>
+                    <button class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700">
+                        Combinatoria del Caos
+                    </button>
+                    <button class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700">
+                        Topologías del Cuerpo
+                    </button>
+                </div>
+
+                <!-- Shopping Cart Preview -->
+                <div class="border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden mb-8">
+                    <div class="bg-gray-50 dark:bg-neutral-800 px-4 py-3 flex items-center justify-between">
+                        <h3 class="text-sm font-medium text-gray-800 dark:text-white">Shopping Cart</h3>
+                        <span class="inline-flex items-center justify-center w-5 h-5 text-xs font-medium text-white bg-indigo-600 rounded-full">2</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3 pb-3 border-b border-gray-200 dark:border-neutral-700">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 flex-shrink-0 overflow-hidden rounded bg-gray-100 dark:bg-neutral-800">
+                                        <img src="/placeholder-cart1.jpg" alt="Cart item" class="h-full w-full object-cover">
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-xs font-medium text-gray-800 dark:text-white">Recursive Pattern #1</p>
+                                        <p class="text-xs text-gray-500 dark:text-neutral-500">18 × 24 in</p>
+                                    </div>
+                                </div>
+                                <p class="text-xs font-medium text-gray-800 dark:text-white">$175.00</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="h-10 w-10 flex-shrink-0 overflow-hidden rounded bg-gray-100 dark:bg-neutral-800">
+                                        <img src="/placeholder-cart2.jpg" alt="Cart item" class="h-full w-full object-cover">
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-xs font-medium text-gray-800 dark:text-white">Geometric Abstractions</p>
+                                        <p class="text-xs text-gray-500 dark:text-neutral-500">Digital Download</p>
+                                    </div>
+                                </div>
+                                <p class="text-xs font-medium text-gray-800 dark:text-white">$35.00</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between py-2 border-t border-gray-200 dark:border-neutral-700">
+                            <p class="text-sm font-medium text-gray-600 dark:text-neutral-400">Subtotal</p>
+                            <p class="text-sm font-medium text-gray-800 dark:text-white">$210.00</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="/shop/cart" class="block w-full text-center px-3 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors">
+                                View Cart & Checkout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="border border-gray-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+                    <div class="bg-gray-50 dark:bg-neutral-800 px-4 py-3">
+                        <h3 class="text-sm font-medium text-gray-800 dark:text-white">Frequently Asked Questions</h3>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer list-none">
+                                <span class="text-sm font-medium text-gray-800 dark:text-white">What is the difference between prints and limited editions?</span>
+                                <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </summary>
+                            <div class="mt-2 text-xs text-gray-600 dark:text-neutral-400">
+                                Limited editions are printed in a restricted quantity, individually signed and numbered. Standard prints are open editions without limit.
+                            </div>
+                        </details>
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer list-none">
+                                <span class="text-sm font-medium text-gray-800 dark:text-white">What printing methods do you use?</span>
+                                <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </summary>
+                            <div class="mt-2 text-xs text-gray-600 dark:text-neutral-400">
+                                All limited editions are printed using archival pigment inks on museum-quality, acid-free paper, ensuring a lifespan of 100+ years when properly displayed.
+                            </div>
+                        </details>
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer list-none">
+                                <span class="text-sm font-medium text-gray-800 dark:text-white">What are your shipping times?</span>
+                                <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </summary>
+                            <div class="mt-2 text-xs text-gray-600 dark:text-neutral-400">
+                                Limited editions typically ship within 7-10 business days, as each is inspected and signed before shipping. Digital downloads are available immediately after purchase.
+                            </div>
+                        </details>
                     </div>
                 </div>
             </section>
