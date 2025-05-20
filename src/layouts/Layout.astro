@@ -1,5 +1,58 @@
+---
+import { Footer } from "@/components/ui/footer";
+import type { FooterProps } from "@/components/ui/footer";
+// Lucide-react icons are no longer directly used here, Footer handles them.
+
+// Props for the main layout, like 'title'
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+
+// Icon constants are removed.
+
+// Define props for the Footer, explicitly typed
+const footerProps: FooterProps = {
+	showPinskyLogo: true,
+	brandName: "Pinsky Studio",
+	socialLinks: [
+		{
+			iconName: "Twitter", // Changed from icon: twitterIconElement
+			href: "https://x.com/pinsky_three",
+			label: "Twitter / X",
+		},
+		{
+			iconName: "Instagram", // Changed from icon: instagramIconElement
+			href: "https://www.instagram.com/pinsky_three",
+			label: "Instagram",
+		},
+		{
+			iconName: "Linkedin", // Changed from icon: linkedinIconElement
+			href: "https://www.linkedin.com/in/bregy/",
+			label: "LinkedIn",
+		},
+	],
+	mainLinks: [
+		{ href: "/", label: "Home" },
+		{ href: "/shop", label: "Shop" },
+		{ href: "/portfolio", label: "Portfolio" },
+		{ href: "/patreon", label: "Patreon" },
+		{ href: "/commissions", label: "Commissions" },
+		{ href: "/workshops", label: "Workshops" },
+		{ href: "/contact", label: "Contact" },
+	],
+	legalLinks: [
+		{ href: "/privacy", label: "Privacy Policy" },
+		// { href: "/terms", label: "Terms of Service" }, // Add if/when terms page is created
+	],
+	copyright: {
+		text: "© " + new Date().getFullYear() + " Pinsky Studio.",
+		license: "All rights reserved.",
+	},
+};
+---
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<!-- Required Meta Tags Always Come First -->
 		<meta charset="utf-8" />
@@ -492,89 +545,8 @@
 		</main>
 		<!-- ========== END MAIN CONTENT ========== -->
 
-		<!-- ========== FOOTER ========== -->
-		<footer class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="py-6 border-t border-gray-200 dark:border-neutral-700">
-				<div class="flex flex-wrap justify-between items-center gap-2">
-					<div>
-						<p class="text-xs text-gray-600 dark:text-neutral-400">
-							© 2025 Pinsky Studio. All rights reserved.
-						</p>
-					</div>
-
-					<div class="flex items-center gap-4">
-						<!-- Theme Switcher -->
-						<button
-							type="button"
-							id="themeSwitcher"
-							class="inline-flex items-center justify-center h-6 text-xs text-gray-500 hover:text-gray-700 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
-							aria-label="Toggle theme"
-						>
-							<svg
-								class="h-3.5 w-3.5 dark:hidden"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-								></path>
-							</svg>
-							<svg
-								class="h-3.5 w-3.5 hidden dark:block"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-								></path>
-							</svg>
-						</button>
-
-						<!-- Social Links -->
-						<ul class="flex flex-wrap items-center">
-							<li
-								class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600"
-							>
-								<a
-									class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-									href="https://x.com/pinsky_three"
-									target="_blank"
-									rel="noopener noreferrer">X</a
-								>
-							</li>
-							<li
-								class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:w-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600"
-							>
-								<a
-									class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-									href="https://www.instagram.com/pinsky_three"
-									target="_blank"
-									rel="noopener noreferrer">Instagram</a
-								>
-							</li>
-							<li class="inline-block">
-								<a
-									class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-									href="https://www.linkedin.com/in/bregy/"
-									target="_blank"
-									rel="noopener noreferrer">LinkedIn</a
-								>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<!-- New React Footer -->
+		<Footer {...footerProps} client:load></Footer>
 		<!-- ========== END FOOTER ========== -->
 
 		<!-- JS PLUGINS -->
