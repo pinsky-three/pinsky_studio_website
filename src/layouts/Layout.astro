@@ -6,8 +6,23 @@ import type { FooterProps } from "@/components/ui/footer";
 // Props for the main layout, like 'title'
 export interface Props {
 	title: string;
+	pageTitle?: string;
+	pageDescription?: string;
+	pageOgType?: string;
+	pageImage?: string;
+	pageUrl?: string;
 }
-const { title } = Astro.props;
+const {
+	title,
+	pageTitle = "Pinsky Studio | Where Algorithms Meet Artistry",
+	pageDescription = "Pinsky Studio is the creative practice of Bregy Malpartida, a multidisciplinary artist and technologist based in Peru. Specializing in the intersection of algorithms and traditional art, the studio creates unique works that combine custom plotter technology with hand-painted techniques.",
+	pageOgType = "website",
+	pageImage = "https://pinsky.studio/assets/img/og-image.png",
+	pageUrl = "https://pinsky.studio/",
+} = Astro.props;
+
+const siteName = "Pinsky Studio";
+const twitterHandle = "@pinskystudio";
 
 // Icon constants are removed.
 
@@ -60,54 +75,37 @@ const footerProps: FooterProps = {
 			name="robots"
 			content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
 		/>
-		<link rel="canonical" href="https://pinsky.studio/" />
+		<link rel="canonical" href={pageUrl} />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
-		<meta
-			name="description"
-			content="Pinsky Studio is the creative practice of Bregy Malpartida, a multidisciplinary artist and technologist based in Berlin. Specializing in the intersection of algorithms and traditional art, the studio creates unique works that combine custom plotter technology with hand-painted techniques."
-		/>
+		<meta name="description" content={pageDescription} />
 
-		<meta name="twitter:site" content="@pinskystudio" />
-		<meta name="twitter:creator" content="@pinskystudio" />
+		<!-- Twitter Card Tags -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:title"
-			content="Pinsky Studio | Where Algorithms Meet Artistry"
-		/>
-		<meta
-			name="twitter:description"
-			content="Discover the unique artistic practice of Bregy Malpartida, where custom plotter technology and traditional painting techniques converge to create innovative artwork."
-		/>
-		<meta
-			name="twitter:image"
-			content="https://pinsky.studio/assets/img/og-image.png"
-		/>
+		<meta name="twitter:site" content={twitterHandle} />
+		<meta name="twitter:creator" content={twitterHandle} />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content={pageImage} />
+		{/* You might want to add twitter:image:alt here if you have alt text for images */}
 
-		<meta property="og:url" content="https://pinsky.studio/" />
+		<!-- Open Graph Tags (for Facebook, WhatsApp, Telegram, LinkedIn, etc.) -->
+		<meta property="og:url" content={pageUrl} />
 		<meta property="og:locale" content="en_US" />
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="Pinsky Studio" />
-		<meta
-			property="og:title"
-			content="Pinsky Studio | Where Algorithms Meet Artistry"
-		/>
-		<meta
-			property="og:description"
-			content="Pinsky Studio is the creative practice of Bregy Malpartida, a multidisciplinary artist and technologist based in Berlin. Specializing in the intersection of algorithms and traditional art, the studio creates unique works that combine custom plotter technology with hand-painted techniques."
-		/>
-		<meta
-			property="og:image"
-			content="https://pinsky.studio/assets/img/og-image.png"
-		/>
+		<meta property="og:type" content={pageOgType} />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:image" content={pageImage} />
+		{/* Recommended: Add image dimensions for better rendering speed */}
+		{/* <meta property="og:image:width" content="1200" /> */}
+		{/* <meta property="og:image:height" content="630" /> */}
+		{/* You might want to add og:image:alt here if you have alt text for images */}
 
 		<!-- Title -->
-		<title>
-			Pinsky Studio | Painting in the Latent Space – Where Algorithms Meet
-			Artistry
-		</title>
+		<title>{title}</title>
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="/favicon.ico" />
