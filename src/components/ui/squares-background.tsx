@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 
 interface SquaresProps {
   direction?: "right" | "left" | "up" | "down" | "diagonal";
@@ -22,10 +22,7 @@ export function Squares({
   const numSquaresX = useRef<number | null>(null);
   const numSquaresY = useRef<number | null>(null);
   const gridOffset = useRef({ x: 0, y: 0 });
-  const [hoveredSquare, setHoveredSquare] = useState<{
-    x: number;
-    y: number;
-  } | null>(null);
+  const hoveredSquareRef = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -34,7 +31,6 @@ export function Squares({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Set canvas background
     canvas.style.background = "#060606";
 
     const resizeCanvas = () => {
@@ -54,28 +50,40 @@ export function Squares({
 
       const currentSquareSize = Math.max(squareSize, 1);
 
-      const startX =
-        Math.floor(gridOffset.current.x / currentSquareSize) *
-        currentSquareSize;
-      const startY =
-        Math.floor(gridOffset.current.y / currentSquareSize) *
-        currentSquareSize;
+      const conceptualGridStartX = Math.floor(
+        gridOffset.current.x / currentSquareSize
+      );
+      const conceptualGridStartY = Math.floor(
+        gridOffset.current.y / currentSquareSize
+      );
 
       ctx.lineWidth = 0.5;
 
-      for (let xGrid = 0; xGrid < (numSquaresX.current || 0); xGrid++) {
-        for (let yGrid = 0; yGrid < (numSquaresY.current || 0); yGrid++) {
+      for (
+        let xGridIdx = 0;
+        xGridIdx < (numSquaresX.current || 0);
+        xGridIdx++
+      ) {
+        for (
+          let yGridIdx = 0;
+          yGridIdx < (numSquaresY.current || 0);
+          yGridIdx++
+        ) {
           const squareX =
-            xGrid * currentSquareSize -
+            xGridIdx * currentSquareSize -
             (gridOffset.current.x % currentSquareSize);
           const squareY =
-            yGrid * currentSquareSize -
+            yGridIdx * currentSquareSize -
             (gridOffset.current.y % currentSquareSize);
 
+          const currentConceptualX = conceptualGridStartX + xGridIdx;
+          const currentConceptualY = conceptualGridStartY + yGridIdx;
+
+          const currentHover = hoveredSquareRef.current;
           if (
-            hoveredSquare &&
-            xGrid === hoveredSquare.x &&
-            yGrid === hoveredSquare.y
+            currentHover &&
+            currentConceptualX === currentHover.x &&
+            currentConceptualY === currentHover.y
           ) {
             ctx.fillStyle = hoverFillColor;
             ctx.fillRect(
@@ -157,31 +165,26 @@ export function Squares({
       const mouseY = event.clientY - rect.top;
       const currentSquareSize = Math.max(squareSize, 1);
 
-      // Adjust mouse position by the current grid offset to get the "actual" position on the conceptual infinite grid
       const effectiveMouseX = mouseX + gridOffset.current.x;
       const effectiveMouseY = mouseY + gridOffset.current.y;
 
-      // Determine which grid cell (xGrid, yGrid) the mouse is over
       const hoveredSquareX = Math.floor(effectiveMouseX / currentSquareSize);
       const hoveredSquareY = Math.floor(effectiveMouseY / currentSquareSize);
 
-      setHoveredSquare({ x: hoveredSquareX, y: hoveredSquareY });
+      hoveredSquareRef.current = { x: hoveredSquareX, y: hoveredSquareY };
     };
 
     const handleMouseLeave = () => {
-      setHoveredSquare(null);
+      hoveredSquareRef.current = null;
     };
 
-    // Event listeners
     window.addEventListener("resize", resizeCanvas);
     canvas.addEventListener("mousemove", handleMouseMove);
     canvas.addEventListener("mouseleave", handleMouseLeave);
 
-    // Initial setup
     resizeCanvas();
     requestRef.current = requestAnimationFrame(updateAnimation);
 
-    // Cleanup
     return () => {
       window.removeEventListener("resize", resizeCanvas);
       canvas.removeEventListener("mousemove", handleMouseMove);
@@ -190,14 +193,7 @@ export function Squares({
         cancelAnimationFrame(requestRef.current);
       }
     };
-  }, [
-    direction,
-    speed,
-    borderColor,
-    hoverFillColor,
-    hoveredSquare,
-    squareSize,
-  ]);
+  }, [direction, speed, borderColor, hoverFillColor, squareSize]);
 
   return (
     <canvas
