@@ -1,12 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import AnimatedGradientBackground from "../components/ui/animated-gradient-background";
+import { Squares } from "../components/ui/squares-background";
 ---
 
 <Layout title="Pinsky Studio - Digital Art & Algorithmic Creativity">
-  <!-- Fixed Fullscreen Gradient Background -->
+  <!-- Fixed Fullscreen Squares Background -->
   <div class="fixed inset-0 z-0">
-    <AnimatedGradientBackground client:load />
+    <Squares client:load />
   </div>
 
   <!-- Hero Content Section -->
